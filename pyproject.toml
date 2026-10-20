@@ -1,0 +1,17 @@
+[project]
+name = "fastapi-database"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+authors = [
+    { name = "xuhonghui", email = "15859256852@163.com" }
+]
+requires-python = ">=3.12"
+dependencies = []
+
+[project.scripts]
+fastapi-database = "fastapi_database:main"
+
+[build-system]
+requires = ["uv_build>=0.12.5,<0.13.0"]
+build-backend = "uv_build"
