@@ -1,2 +1,2 @@
 def main() -> None:
-    print("Hello from fastapi-database!")
+    print("Hello from oi_trainer!")

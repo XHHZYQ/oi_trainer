@@ -1,5 +1,5 @@
 [project]
-name = "fastapi-database"
+name = "oi_trainer"
 version = "0.1.0"
 description = "Add your description here"
 readme = "README.md"
@@ -10,7 +10,7 @@ requires-python = ">=3.12"
 dependencies = []
 
 [project.scripts]
-fastapi-database = "fastapi_database:main"
+oi_trainer = "fastapi_database:main"
 
 [build-system]
 requires = ["uv_build>=0.12.5,<0.13.0"]
