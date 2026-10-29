@@ -4,6 +4,7 @@ from contextlib import asynccontextmanager
 from fastapi import FastAPI
 
 from app.api.health import router as health_router
+from app.api.v1 import api_router
 from app.core.exceptions import register_exception_handlers
 from app.core.redis import close_redis, init_redis
 
@@ -19,3 +20,4 @@ app = FastAPI(title="信奥 AI 编程训练平台", version="0.1.0", lifespan=li
 
 register_exception_handlers(app)
 app.include_router(health_router)
+app.include_router(api_router)

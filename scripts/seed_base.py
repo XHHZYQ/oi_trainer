@@ -157,7 +157,9 @@ async def seed() -> dict[str, int]:
             course = await get_or_create(
                 session, Course, stats,
                 code=course_info["code"],
-                defaults=dict(**course_info, status=CourseStatus.published, created_by=admin.id),
+                # defaults 里剔除 code，避免与 lookup 关键字冲突
+                defaults=dict(**{k: v for k, v in course_info.items() if k != "code"},
+                              status=CourseStatus.published, created_by=admin.id),
             )
             cls = await get_or_create(
                 session, ClassGroup, stats,
