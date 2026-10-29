@@ -7,7 +7,7 @@ from sqlalchemy import pool
 from sqlalchemy.ext.asyncio import async_engine_from_config
 from sqlmodel import SQLModel
 
-import app.models  # noqa: F401  显式导入，保证 metadata 完整
+import app.models  # noqa: F401  触发 models/__init__.py 执行，所有表注册到 SQLModel.metadata
 from app.core.config import settings
 
 config = context.config
