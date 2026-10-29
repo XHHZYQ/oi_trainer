@@ -3,7 +3,7 @@ import os
 
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
-# 按 APP_ENV 切换 env 文件：local -> .env.local
+# 按 APP_ENV 切换 env 文件：local -> .env.local，prod -> .env.prod
 _env_file = f".env.{os.getenv('APP_ENV', 'local')}"
 
 
@@ -12,7 +12,7 @@ class Settings(BaseSettings):
 
     app_env: str = "local"
     database_url: str  # 必填，形如 postgresql+asyncpg://user:pass@host:5432/oi_trainer
-    redis_url: str = "redis://localhost:6379/0"
+    redis_url: str = "redis://127.0.0.1:6379/0"
     jwt_secret_key: str  # 必填
     jwt_algorithm: str = "HS256"
     access_token_expire_minutes: int = 1440
